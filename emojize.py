@@ -27,10 +27,10 @@ def get_emotion(emoti: str):
         if text_part[0] == ':' and text_part[-1] == ':':
             transformed_text += emojize(
                 text_part, delimiters= [':', ':'], language='en', 
-                )
+                ) + ' '
         else:
-            transformed_text += text_part
-    return transformed_text
+            transformed_text += text_part + ' '
+    return transformed_text[:-1]
 
 if __name__ == '__main__':
     main()
