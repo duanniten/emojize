@@ -19,7 +19,7 @@ def read_emotion():
 
 def get_emotion(emoti):
     try:
-        emoti = emojize(emoti, delimiters= [':', ':'])
+        return emojize(emoti, delimiters= [':', ':'])
     except:
         sys.exit("Emoji not found")
 
