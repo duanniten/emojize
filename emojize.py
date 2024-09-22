@@ -15,13 +15,20 @@ def print_emotion(emoti: str):
     print(f'Output: {emoti}')
 
 def read_emotion():
-    return input("Input: ").strip()
+    try: 
+        return input("Input: ")
+    except EOFError:
+        sys.exit("Should enter a text")
 
-def get_emotion(emoti):
-    try:
-        return emojize(emoti, delimiters= [':', ':'])
-    except:
-        sys.exit("Emoji not found")
+def get_emotion(emoti: str):
+    splited = emoti.split(sep= ' ')
+    transformed_text = ''
+    for text_part in splited:
+        if text_part[0] == ':' and text_part[-1] == ':':
+            transformed_text += emojize(text_part, delimiters= [':', ':'])
+        else:
+            transformed_text += text_part
+    return transformed_text
 
 if __name__ == '__main__':
     main()
