@@ -21,16 +21,7 @@ def read_emotion():
         sys.exit("Should enter a text")
 
 def get_emotion(emoti: str):
-    splited = emoti.split(sep= ' ')
-    transformed_text = ''
-    for text_part in splited:
-        if text_part[0] == ':' and text_part[-1] == ':':
-            transformed_text += emojize(
-                text_part, delimiters= [':', ':'], language='en', 
-                ) + ' '
-        else:
-            transformed_text += text_part + ' '
-    return transformed_text[:-1]
+    return emojize(emoti)
 
 if __name__ == '__main__':
     main()
