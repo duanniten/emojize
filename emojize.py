@@ -21,7 +21,7 @@ def read_emotion():
         sys.exit("Should enter a text")
 
 def get_emotion(emoti: str):
-    return emojize(emoti)
+    return emojize(emoti, language='alias')
 
 if __name__ == '__main__':
     main()
