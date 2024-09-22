@@ -25,7 +25,9 @@ def get_emotion(emoti: str):
     transformed_text = ''
     for text_part in splited:
         if text_part[0] == ':' and text_part[-1] == ':':
-            transformed_text += emojize(text_part, delimiters= [':', ':'])
+            transformed_text += emojize(
+                text_part, delimiters= [':', ':'], language='en', 
+                )
         else:
             transformed_text += text_part
     return transformed_text
